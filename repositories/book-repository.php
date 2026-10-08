@@ -1,5 +1,5 @@
 <?php
-
+function getBooks() {
 $books = [
   [
     "id" => 1,
@@ -42,7 +42,8 @@ $books = [
     "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"],
   ],
 ];
-
+return $books;
+}
 $book = [
   "id" => 5,
   "title" => "Antologi Rasa Nusantara",
