@@ -1,6 +1,8 @@
 <?php
 $pageTitle = 'Edit Penulis';
 $pageSubtitle = 'Perbarui data penulis';
+require '../../repositories/author-repository.php';
+$author = getAuthor();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -13,13 +15,6 @@ $pageSubtitle = 'Perbarui data penulis';
 </head>
 
 <body>
-  <?php
-  $author = [
-    "id" => 1,
-    "name" => "Andrea Hirata",
-    "bio" => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.",
-  ];
-  ?>
   <div class="app-shell">
  <?php require __DIR__ . '/../../components/admin/sidebar.php'; ?>
 
@@ -37,7 +32,7 @@ $pageSubtitle = 'Perbarui data penulis';
             </div>
             <div class="form-group">
               <label for="bio">Biografi Singkat</label>
-              <textarea id="bio" name="bio" rows="3"><?= $author['bio'] ?></textarea>
+              <textarea id="bio" name="bio" rows="3"><?= $author['bio'] ?? ''?></textarea>
             </div>
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>

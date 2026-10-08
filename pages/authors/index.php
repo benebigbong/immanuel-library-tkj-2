@@ -1,6 +1,8 @@
 <?php
 $pageTitle = 'Manajemen Penulis';
 $pageSubtitle = 'Kelola data penulis yang terdaftar di sistem';
+require_once __DIR__ . '/../../repositories/author-repository.php';
+$authors = getAuthors();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -11,9 +13,6 @@ $pageSubtitle = 'Kelola data penulis yang terdaftar di sistem';
   <link rel="stylesheet" href="../../styles/authors/index.css">
 </head>
 <body>
-  <?php
-  $author = ["id" => 1, "name" => "Andrea Hirata", "total_books" => 1];
-  ?>
   <div class="app-shell">
     <?php require __DIR__ . '/../../components/admin/sidebar.php'; ?>
 
@@ -42,6 +41,7 @@ $pageSubtitle = 'Kelola data penulis yang terdaftar di sistem';
               </tr>
             </thead>
             <tbody>
+              <?php foreach ($authors as $index => $author) : ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -57,6 +57,7 @@ $pageSubtitle = 'Kelola data penulis yang terdaftar di sistem';
                   </div>
                 </td>
               </tr>
+            <?php endforeach ?>
             </tbody>
           </table>
         </div>
