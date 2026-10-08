@@ -1,6 +1,8 @@
 <?php
 $pageTitle = 'Detail Buku';
 $pageSubtitle = 'Informasi lengkap buku beserta kategori dan penulis';
+require '../../repositories/book-repository.php';
+$book = getBook();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -11,9 +13,6 @@ $pageSubtitle = 'Informasi lengkap buku beserta kategori dan penulis';
   <link rel="stylesheet" href="../../styles/books/show.css">
 </head>
 <body>
-  <?php
-  require '../../repositories/book-repository.php';
-  ?>
   <div class="app-shell">
   <?php require __DIR__ . '/../../components/admin/sidebar.php'; ?>
 
