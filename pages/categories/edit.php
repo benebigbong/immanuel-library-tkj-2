@@ -1,6 +1,8 @@
 <?php
 $pageTitle = 'Edit Kategori';
 $pageSubtitle = 'Perbarui data kategori';
+require_once __DIR__ . '/../../repositories/category-repository.php';
+$category = getCategory();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -11,13 +13,6 @@ $pageSubtitle = 'Perbarui data kategori';
   <link rel="stylesheet" href="../../styles/categories/edit.css">
 </head>
 <body>
-  <?php
-  $category = [
-      "id"          => 1,
-      "name"        => "Fiksi",
-      "description" => "Novel dan cerita rekaan",
-  ];
-  ?>
   <div class="app-shell">
  <?php require __DIR__ . '/../../components/admin/sidebar.php'; ?>
 
